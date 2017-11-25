@@ -1,0 +1,79 @@
+﻿<Window x:Class="OrgWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrgWPF"
+        mc:Ignorable="d"
+        Title="Org" Height="800" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0">
+            <TextBlock Text="Choose the Organization" Margin="10,10" Height="20" Width="140" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ComboBox x:Name="OrgBox" Margin="10,10" Height="20" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" DisplayMemberPath="OrgName" ItemsSource="{Binding}" SelectedValuePath="OrgID" SelectedIndex="0" SelectionChanged="OrgBox_SelectionChanged"/>
+            <Button x:Name="AddOrg" Content="Add Organization" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="AddOrg_Click"/>
+            <Button x:Name="DeleteOrg" Content="Delete Organization" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="DeleteOrg_Click"/>
+            <Button x:Name="UpdateOrg" Content="Update Organization" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="UpdateOrg_Click"/>            
+        </WrapPanel>
+        <WrapPanel Grid.Row="1">
+            <TextBlock Text="Choose the Client" Margin="10,10" Height="20" Width="140" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ComboBox x:Name="ClientBox" Margin="10,10" Height="20" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" DisplayMemberPath="ClientManager" ItemsSource="{Binding ElementName=OrgBox, Path=SelectedItem.Clients}" SelectedValuePath="ClientID" SelectedIndex="0" SelectionChanged="ClientBox_SelectionChanged"/>
+            <Button x:Name="AddClient" Content="Add Client" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="AddClient_Click"/>
+            <Button x:Name="DeleteClient" Content="Delete Client" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="DeleteClient_Click"/>
+            <Button x:Name="UpdateClient" Content="Update Client" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="UpdateClient_Click"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="2">
+            <TextBlock Text="Choose the Order" Margin="10,10" Height="20" Width="140" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ComboBox x:Name="OrderBox" Margin="10,10" Height="20" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" DisplayMemberPath="OrderWaybill" ItemsSource="{Binding ElementName=ClientBox, Path=SelectedItem.Orders}" SelectedValuePath="OrderID" SelectedIndex="0" SelectionChanged="OrderBox_SelectionChanged"/>
+            <Button x:Name="AddOrder" Content="Add Order" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="AddOrder_Click"/>
+            <Button x:Name="DeleteOrder" Content="Delete Order" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="DeleteOrder_Click"/>
+            <Button x:Name="UpdateOrder" Content="Update Order" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="UpdateOrder_Click"/>
+        </WrapPanel>
+        <Grid Grid.Row="3">
+            <DataGrid x:Name="PaymentGrid" Grid.Column="1" ItemsSource="{Binding ElementName=OrderBox, Path=SelectedItem.Payments}" LoadingRow="dGrid_LoadingRow" RowHeaderWidth="50" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Дата платежа" Binding="{Binding PaymentData, StringFormat={}{0:yyyy.MM.dd}}" Width="*">
+                        <DataGridTextColumn.CellStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextAlignment" Value="Right"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Количество" Binding="{Binding PaymentNumber}" Width="*">
+                        <DataGridTextColumn.CellStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextAlignment" Value="Right"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Сумма" Binding="{Binding PaymentSumm}" Width="*">
+                        <DataGridTextColumn.CellStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextAlignment" Value="Right"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Код банка" Binding="{Binding PaymentBank_Code}" Width="*">
+                        <DataGridTextColumn.CellStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextAlignment" Value="Right"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>                    
+                </DataGrid.Columns>
+            </DataGrid>            
+        </Grid>
+        <WrapPanel Grid.Row="4">
+            <Button x:Name="AddPayment" Content="Add Payment" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="AddPayment_Click"/>
+            <Button x:Name="DeletePayment" Content="Delete Payment" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="DeletePayment_Click"/>
+            <Button x:Name="UpdatePayment" Content="Update Payment" Height="20" Width="120" Margin="10,10" VerticalAlignment="Top" HorizontalAlignment="Left" Click="UpdatePayment_Click"/>
+        </WrapPanel>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OrgWPF.BusinessLayer.Models.ClientViewModel">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQACAAAIAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ClientViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OrgWPF.BusinessLayer.Models.OrderViewModel">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAJAAAAIAAAAAAQAgAAAAAAAAAAAQAACIAA=</HashCode>
+      <FileName>Models\OrderViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OrgWPF.BusinessLayer.Models.OrgViewModel">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAEAAAAAAEAACAAAAAAAAAAAgBAAAAABADAAAA=</HashCode>
+      <FileName>Models\OrgViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OrgWPF.BusinessLayer.Models.PaymentViewModel">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAEAAAAAAAABAAAAAAAAAAABAAEAAAAAAAAAI=</HashCode>
+      <FileName>Models\PaymentViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OrgWPF.BusinessLayer.Service.ClientService" BaseTypeListCollapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAkAABAAAAAAAAAAAECAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Service\ClientService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OrgWPF.BusinessLayer.Service.OrderService" BaseTypeListCollapsed="true">
+    <Position X="7" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAAAAEAABAAAAAAAAAAAEAAEAAAgAIAAAAAAA=</HashCode>
+      <FileName>Service\OrderService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OrgWPF.BusinessLayer.Service.OrgService" BaseTypeListCollapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAEAABAAAAAAAAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Service\OrgService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OrgWPF.BusinessLayer.Service.PaymentService" BaseTypeListCollapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAACAAAAEAABAAAAAAAAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Service\PaymentService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="OrgWPF.BusinessLayer.Interfaces.IOrgService&lt;T&gt;">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAABAAAAAAAAAAAEAAEAAAgAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IOrgService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
